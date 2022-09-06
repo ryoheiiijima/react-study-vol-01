@@ -22,7 +22,7 @@ const InputWrapper = styled.div`
 export const App: FC = () => {
   const [price, setPrice] = useState(10000);
   const [count, setCount] = useState(10);
-  let url = '';
+  const [url, setUrl] = useState("");
 
   return (<>
     <InputWrapper>
@@ -45,8 +45,7 @@ export const App: FC = () => {
       <label className="label">
         <span className="text">通常購入のURL</span>
         <input className="input" type="url" onChange={(event) => {
-          url = event.currentTarget.value;
-          console.log(url);
+          setUrl(String(event.currentTarget.value));
         }} />
       </label>
     </InputWrapper>
